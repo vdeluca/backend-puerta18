@@ -1,5 +1,5 @@
 import { Router, Request, Response, request, response } from "express";
-import { Socie } from "../models/socie.model";
+import { Socie, Curso } from "../models/socie.model";
 export const router = Router();
 let socies: Array<Socie> = [
     {
@@ -29,6 +29,7 @@ router.get('/socies', (req: Request, res: Response) => {
     let socie_resp: Array <{nombre: string, apellido: string, nick:string, edad:number}> = [];
     let current_year = new Date().getFullYear();
     socies.forEach( socie => {
+
         let edad = current_year - socie.nacimiento;
         socie_resp.push({
             nombre: socie.nombre,
@@ -43,7 +44,18 @@ router.get('/socies', (req: Request, res: Response) => {
         ok: true,
         socies: socie_resp
     });     
-});                    
+});      
+
+router.get('/cursos', (req: Request, res: Response) => {
+
+    let curso:Array<Curso> = [
+        {
+            "titulo": "Diseño de imagen y sonido",
+            "color": "brown"
+        }
+    ]
+
+});
 
 router.get('/socie/:nick', (req: Request, res: Response) => {
     let ficha:Socie= {nombre: "", apellido: "", nick:"", nacimiento:0};

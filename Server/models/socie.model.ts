@@ -4,3 +4,10 @@ export interface Socie{
     nick: string
     nacimiento: number
 }
+
+export interface Curso {
+    titulo: string,
+    color: "red" | "blue" | "brown",
+    capacidad: number,
+    horas_semanales: number 
+}
