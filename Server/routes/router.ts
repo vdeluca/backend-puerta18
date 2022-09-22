@@ -1,29 +1,10 @@
 import { Router, Request, Response, request, response } from "express";
-import { Socie, Curso } from "../models/socie.model";
+import { Socie } from "../models/socie.model";
+import { Curso } from "../models/curso.model";
+import {socies} from "../data/socies.data";
+
 export const router = Router();
-let socies: Array<Socie> = [
-    {
-        nombre: 'Nahuel',
-        apellido: 'Heredia',
-        nick: "N4hu3l",
-        nacimiento: 1990
-    },
 
-    {
-        nombre: 'Irina',
-        apellido: 'Davico',
-        nick: 'Ir1n4',
-        nacimiento: 2000,
-    },
-
-    {
-        nombre: 'John',
-        apellido: 'Maza',
-        nick: 'J0hny',
-        nacimiento: 2001,
-    }
-
-];
 
 router.get('/socies', (req: Request, res: Response) => {
     let socie_resp: Array <{nombre: string, apellido: string, nick:string, edad:number}> = [];
@@ -51,7 +32,9 @@ router.get('/cursos', (req: Request, res: Response) => {
     let curso:Array<Curso> = [
         {
             "titulo": "Diseño de imagen y sonido",
-            "color": "brown"
+            "color": "brown",
+            "horas_semanales": 3,
+            "capacidad": 23
         }
     ]
 
@@ -70,3 +53,7 @@ router.get('/socie/:nick', (req: Request, res: Response) => {
         socie: ficha
     });
 });
+
+router.get('/rickandmorty', (req:Request, res:Response) => {
+
+})
