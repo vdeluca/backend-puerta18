@@ -1,7 +1,13 @@
 import { Router, Request, Response, request, response } from "express";
+// Models
 import { Socie } from "../models/socie.model";
 import { Curso } from "../models/curso.model";
-import {socies} from "../data/socies.data";
+// Data
+import { socies } from "../data/socies.data";
+import { cursos } from "../data/cursos.data";
+import { docentes } from "../data/docentes.data";
+
+
 
 export const router = Router();
 
@@ -28,16 +34,10 @@ router.get('/socies', (req: Request, res: Response) => {
 });      
 
 router.get('/cursos', (req: Request, res: Response) => {
-
-    let curso:Array<Curso> = [
-        {
-            "titulo": "Diseño de imagen y sonido",
-            "color": "brown",
-            "horas_semanales": 3,
-            "capacidad": 23
-        }
-    ]
-
+    res.json({
+        ok:true,
+        cursos: cursos
+    });
 });
 
 router.get('/socie/:nick', (req: Request, res: Response) => {
