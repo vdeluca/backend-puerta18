@@ -42,14 +42,16 @@ router.get('/cursos', (req: Request, res: Response) => {
 
 router.get('/socie/:nick', (req: Request, res: Response) => {
     let ficha:Socie= {nombre: "", apellido: "", nick:"", nacimiento:0};
+    let flag:boolean=false;
 
     socies.forEach(socie => {
         if (socie.nick === req.params.nick){
             ficha = socie;
+            flag=true;
         }
     });
     res.json({
-        ok: true,
+        ok: flag,
         socie: ficha
     });
 });
