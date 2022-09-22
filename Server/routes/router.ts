@@ -56,6 +56,15 @@ router.get('/socie/:nick', (req: Request, res: Response) => {
     });
 });
 
+
+/**
+ * [TODO]: Traer Docente por nick
+ */
+router.get('docente/:nick', (req:Request, res: Response) => {
+
+});
+
+
 router.get('/rickandmorty', (req:Request, res:Response) => {
 
 })
