@@ -5,5 +5,5 @@ export interface Curso {
     color: "red" | "blue" | "brown",
     capacidad: number,
     horas_semanales: number,
-    profesor?: Docente 
+    profesor?: Docente,
 }
