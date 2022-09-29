@@ -2,10 +2,12 @@ import { Router, Request, Response, request, response } from "express";
 // Models
 import { Socie } from "../models/socie.model";
 import { Curso } from "../models/curso.model";
+
 // Data
 import { socies } from "../data/socies.data";
 import { cursos } from "../data/cursos.data";
 import { docentes } from "../data/docentes.data";
+import { cursosPorDocente } from "../models/cursosxdocentes.model";
 
 
 
@@ -67,4 +69,47 @@ router.get('docente/:nick', (req:Request, res: Response) => {
 
 router.get('/rickandmorty', (req:Request, res:Response) => {
 
-})
+});
+
+router.get('/cursosxdocente', (req: Request, res:Response) => {
+    let resp: Array<cursosPorDocente> =[];
+
+    // Recorro cada uno de los cursos
+    cursos.forEach(curso =>{
+        // Asumo que no este curso tiene un docente que no está repetido
+        let repetido = false;
+        // Variable temporal para guardar el nombre del docente
+        let tmp_nombreDocente: string = "";
+        // Variable temporal para guardar el id del docente
+        let tmp_idDocente: number = -1;
+        // Recorro la respuesta para ver si ya la escribí al docente en el array
+        resp.forEach(docente=>{
+            if (docente.id_docente == curso.profesor?.id){
+                // Establezco flag
+                repetido = true;
+                // Guardo en variable temporal
+                tmp_nombreDocente = docente.nombre;
+                // Guardo en variable temporal
+                tmp_idDocente = docente.id_docente;
+            }
+        });
+        // Si está repetido incremento, sino agrego
+        if (!repetido) {
+            if (curso.profesor){
+                // If narrowing
+                resp.push({id_docente:curso.profesor?.id, nombre:curso.profesor.nombre, cantidad:1})
+            }
+        }
+        else {
+            // [TODO] Sumar
+            //resp.push({id_docente:tmp_idDocente, nombre: tmp_nombreDocente, cantidad:1})
+        }
+
+        res.json({
+            ok: true,
+            data: resp
+        })
+
+
+    });
+});
