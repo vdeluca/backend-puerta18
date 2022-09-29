@@ -71,6 +71,24 @@ router.get('/rickandmorty', (req:Request, res:Response) => {
 
 });
 
+
+function agregarCurso(fuente: Curso): cursosPorDocente{
+    if (fuente.profesor){
+        return {nombre: fuente.profesor.nombre, id_docente: fuente.profesor.id, cantidad:1 }
+    }
+    else {
+        return {nombre: "", id_docente: -1, cantidad:1 }
+    }
+}
+
+function acumularCurso(fuente: Array <cursosPorDocente>, id_docente:number){
+    fuente.forEach(docente => {
+        if (docente.id_docente == id_docente){
+            docente.cantidad += 1;
+        }
+    });
+}
+
 router.get('/cursosxdocente', (req: Request, res:Response) => {
     let resp: Array<cursosPorDocente> =[];
 
@@ -84,7 +102,7 @@ router.get('/cursosxdocente', (req: Request, res:Response) => {
         let tmp_idDocente: number = -1;
         // Recorro la respuesta para ver si ya la escribí al docente en el array
         resp.forEach(docente=>{
-            if (docente.id_docente == curso.profesor?.id){
+            if (docente.id_docente === curso.profesor?.id){
                 // Establezco flag
                 repetido = true;
                 // Guardo en variable temporal
@@ -97,12 +115,11 @@ router.get('/cursosxdocente', (req: Request, res:Response) => {
         if (!repetido) {
             if (curso.profesor){
                 // If narrowing
-                resp.push({id_docente:curso.profesor?.id, nombre:curso.profesor.nombre, cantidad:1})
+                resp.push(agregarCurso(curso));
             }
         }
         else {
-            // [TODO] Sumar
-            //resp.push({id_docente:tmp_idDocente, nombre: tmp_nombreDocente, cantidad:1})
+            acumularCurso(resp, tmp_idDocente);
         }
 
         res.json({
