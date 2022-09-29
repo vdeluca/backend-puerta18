@@ -81,13 +81,6 @@ function agregarCurso(fuente: Curso): cursosPorDocente{
     }
 }
 
-function acumularCurso(fuente: Array <cursosPorDocente>, id_docente:number){
-    fuente.forEach(docente => {
-        if (docente.id_docente == id_docente){
-            docente.cantidad += 1;
-        }
-    });
-}
 
 router.get('/cursosxdocente', (req: Request, res:Response) => {
     let resp: Array<cursosPorDocente> =[];
@@ -96,19 +89,12 @@ router.get('/cursosxdocente', (req: Request, res:Response) => {
     cursos.forEach(curso =>{
         // Asumo que no este curso tiene un docente que no está repetido
         let repetido = false;
-        // Variable temporal para guardar el nombre del docente
-        let tmp_nombreDocente: string = "";
-        // Variable temporal para guardar el id del docente
-        let tmp_idDocente: number = -1;
         // Recorro la respuesta para ver si ya la escribí al docente en el array
         resp.forEach(docente=>{
             if (docente.id_docente === curso.profesor?.id){
-                // Establezco flag
                 repetido = true;
-                // Guardo en variable temporal
-                tmp_nombreDocente = docente.nombre;
-                // Guardo en variable temporal
-                tmp_idDocente = docente.id_docente;
+                // Acumulo
+                docente.cantidad +=1;
             }
         });
         // Si está repetido incremento, sino agrego
@@ -118,10 +104,6 @@ router.get('/cursosxdocente', (req: Request, res:Response) => {
                 resp.push(agregarCurso(curso));
             }
         }
-        else {
-            acumularCurso(resp, tmp_idDocente);
-        }
-
         res.json({
             ok: true,
             data: resp
