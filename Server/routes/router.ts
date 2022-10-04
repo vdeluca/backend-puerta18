@@ -72,43 +72,14 @@ router.get('/rickandmorty', (req:Request, res:Response) => {
 });
 
 
-function agregarCurso(fuente: Curso): cursosPorDocente{
-    if (fuente.profesor){
-        return {nombre: fuente.profesor.nombre, id_docente: fuente.profesor.id, cantidad:1 }
-    }
-    else {
-        return {nombre: "", id_docente: -1, cantidad:1 }
-    }
-}
-
-
 router.get('/cursosxdocente', (req: Request, res:Response) => {
-    let resp: Array<cursosPorDocente> =[];
-
-    // Recorro cada uno de los cursos
-    cursos.forEach(curso =>{
-        // Asumo que no este curso tiene un docente que no está repetido
-        let repetido = false;
-        // Recorro la respuesta para ver si ya la escribí al docente en el array
-        resp.forEach(docente=>{
-            if (docente.id_docente === curso.profesor?.id){
-                repetido = true;
-                // Acumulo
-                docente.cantidad +=1;
-            }
-        });
-        // Si está repetido incremento, sino agrego
-        if (!repetido) {
-            if (curso.profesor){
-                // If narrowing
-                resp.push(agregarCurso(curso));
-            }
-        }
-        res.json({
-            ok: true,
-            data: resp
-        })
-
-
+    let cursosPorDocente: Array<cursosPorDocente> = [];
+    docentes.forEach(docente=>{
+        let cxd = cursos.filter(curso => curso.profesor==docente);
+        cursosPorDocente.push({"docente":docente,"cantidad":cxd.length })
     });
+
+    res.json({
+        cursosPorDocente
+    })
 });

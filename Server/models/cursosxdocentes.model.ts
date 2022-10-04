@@ -1,5 +1,6 @@
+import { Docente } from "./docente.model";
+
 export interface cursosPorDocente {
-    id_docente: number,
-    nombre: string, 
+    docente: Docente,
     cantidad: number
 }
