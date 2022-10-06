@@ -1,0 +1,45 @@
+SELECT * FROM alumnes
+SELECT nombre FROM alumnes
+SELECT * FROM alumnes
+SELECT * FROM alumnes WHERE activo=1
+SELECT * FROM alumnes WHERE activo=0
+SELECT * FROM alumnes WHERE activo!=1
+SELECT * FROM `cursos`
+ALTER TABLE `cursos` ADD `tipo` VARCHAR(15) NOT NULL AFTER `nombre`;
+SELECT * FROM `cursos`
+UPDATE `cursos` SET `tipo` = 'tecnologia' WHERE `cursos`.`id` = 1;
+UPDATE `cursos` SET `tipo` = 'arte' WHERE `cursos`.`id` = 2;
+UPDATE `cursos` SET `tipo` = 'tecnologia' WHERE `cursos`.`id` = 3;
+UPDATE `cursos` SET `tipo` = 'tecnologia' WHERE `cursos`.`id` = 5;
+UPDATE `cursos` SET `tipo` = 'tecnologia' WHERE `cursos`.`id` = 6;
+UPDATE `cursos` SET `tipo` = 'arte' WHERE `cursos`.`id` = 7;
+UPDATE `cursos` SET `tipo` = 'tecnologia' WHERE `cursos`.`id` = 8;
+UPDATE `cursos` SET `tipo` = 'tecnologia' WHERE `cursos`.`id` = 15;
+SELECT * FROM `inscripciones`
+SELECT * FROM `inscripciones` ORDER BY `inscripciones`.`id` ASC
+SELECT * FROM `inscripciones` ORDER BY `inscripciones`.`id` DESC
+SELECT * FROM `inscripciones` ORDER BY `inscripciones`.`id` ASC
+SELECT * FROM `inscripciones`
+SELECT nombre from alumnes INNER JOIN inscripciones on (alumnes.id=inscripciones.alumne)
+SELECT alumnes.`nombre`, inscripciones.curso FROM alumnes INNER JOIN inscripciones on (alumnes.id=inscripciones.alumne)
+SELECT alumnes.`nombre`, cursos.nombre FROM alumnes INNER JOIN inscripciones on (alumnes.id=inscripciones.alumne) INNER JOIN cursos ON (inscripciones.curso=cursos.id)
+SELECT alumnes.`nombre`, cursos.nombre FROM alumnes INNER JOIN inscripciones on (alumnes.id=inscripciones.alumne) INNER JOIN cursos ON (inscripciones.curso=cursos.id) WHERE cursos.tipo="arte"
+SELECT * FROM `cronograma`
+SELECT cursos.nombre, cronograma.* FROM `cronograma` INNER JOIN cursos ON (cronograma.curso=cursos.id)
+SELECT cursos.nombre, cursos.tipo, cronograma.* FROM `cronograma` INNER JOIN cursos ON (cronograma.curso=cursos.id) ORDER BY cursos.tipo
+SELECT cursos.nombre, cursos.tipo, cronograma.* FROM `cronograma` INNER JOIN cursos ON (cronograma.curso=cursos.id) ORDER BY `cursos`.`tipo` DESC
+SELECT cursos.nombre, cursos.tipo, cronograma.* FROM `cronograma` INNER JOIN cursos ON (cronograma.curso=cursos.id) ORDER BY `cursos`.`tipo` ASC
+SELECT cursos.nombre, cursos.tipo, cronograma.* FROM `cronograma` INNER JOIN cursos ON (cronograma.curso=cursos.id) WHERE cronograma.fecha_inicio < '2023-01-01' ORDER BY `cursos`.`tipo` ASC
+SELECT cursos.nombre, cursos.tipo, cronograma.*, inscripciones.alumne FROM `cronograma` INNER JOIN cursos ON (cronograma.curso=cursos.id) INNER JOIN inscripciones ON (cursos.id = inscripciones.curso) WHERE cronograma.fecha_inicio < '2023-01-01' ORDER BY `cursos`.`tipo` ASC
+SELECT cursos.nombre, cursos.tipo, cronograma.*,alumnes.nombre FROM `cronograma` INNER JOIN cursos ON (cronograma.curso=cursos.id) INNER JOIN inscripciones ON (cursos.id = inscripciones.curso) INNER JOIN alumnes ON (inscripciones.alumne=alumnes.id) WHERE cronograma.fecha_inicio < '2023-01-01' ORDER BY `cursos`.`tipo` ASC
+SELECT cursos.nombre, cronograma.* FROM cursos INNER JOIN cronograma ON (cursos.id = cronograma.curso)
+SELECT cursos.nombre, cronograma.* FROM cursos INNER JOIN cronograma ON (cursos.id = cronograma.curso) WHERE cronograma.dias LIKE '%Lunes%' OR cronograma.dias LIKE '%Viernes%'
+select COUNT(inscripciones.id), cursos.tipo FROM inscripciones INNER JOIN cursos ON (inscripciones.curso=cursos.id) GROUP BY(cursos.tipo)
+select cursos.tipo, COUNT(inscripciones.id) as cantidad FROM inscripciones INNER JOIN cursos ON (inscripciones.curso=cursos.id) GROUP BY(cursos.tipo)
+select cursos.tipo, COUNT(inscripciones.id) FROM inscripciones INNER JOIN cursos ON (inscripciones.curso=cursos.id) GROUP BY(cursos.tipo)
+select cursos.tipo, COUNT(inscripciones.id) as cantidad FROM inscripciones INNER JOIN cursos ON (inscripciones.curso=cursos.id) GROUP BY(cursos.tipo)
+select cursos.tipo, SUM(inscripciones.id) as cantidad FROM inscripciones INNER JOIN cursos ON (inscripciones.curso=cursos.id) GROUP BY(cursos.tipo)
+select cursos.tipo, SUM(inscripciones.id) as cantidad, cursos.nombre FROM inscripciones INNER JOIN cursos ON (inscripciones.curso=cursos.id) GROUP BY(cursos.tipo)
+select cursos.tipo, SUM(inscripciones.id) as cantidad, cursos.nombre, inscripciones.alumne FROM inscripciones INNER JOIN cursos ON (inscripciones.curso=cursos.id) GROUP BY(cursos.tipo)
+select cursos.tipo, COUNT(inscripciones.id) as cantidad, cursos.nombre, inscripciones.alumne FROM inscripciones INNER JOIN cursos ON (inscripciones.curso=cursos.id) GROUP BY(cursos.tipo)
+select cursos.tipo, COUNT(inscripciones.id) as cantidad FROM inscripciones INNER JOIN cursos ON (inscripciones.curso=cursos.id) GROUP BY(cursos.tipo)

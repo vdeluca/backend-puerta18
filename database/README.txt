@@ -8,3 +8,10 @@ Para ejecutar el docker
 Ejercicio:
 
 Ejecutar una consulta que me devuelva nombre del alumne y nombre del curso de todos aquellos inscriptos en los cursos de programación o backend
+
+
+Ejercios para la clase del 6 de octubre. Instrucciones SQL
+
+1) Eliminar todas las inscripciones que no mantengan integridad referencial. Consulta DELETE
+2) Nombre de los inscriptos para el año que viene
+3) Cantidad de inscriptos para el año que viene, en arte y en tecnologia (clasificados)

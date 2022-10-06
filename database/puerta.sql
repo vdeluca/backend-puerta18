@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Oct 04, 2022 at 03:46 PM
+-- Generation Time: Oct 06, 2022 at 03:43 PM
 -- Server version: 10.5.10-MariaDB-1:10.5.10+maria~focal
 -- PHP Version: 7.4.19
 
@@ -54,7 +54,36 @@ INSERT INTO `alumnes` (`id`, `nombre`, `nacimiento`, `genero`, `dni`, `activo`) 
 (11, 'Irina', '2001-12-16', 'femenino', 58385823, 1),
 (12, 'Maria', '2004-06-09', 'femenino', 45749453, 1),
 (13, 'Franco Galian', '2002-02-22', 'M', 43873184, 1),
-(14, 'Juan', '2012-10-03', 'masculino', 42057066, 0);
+(14, 'Juan', '2012-10-03', 'masculino', 42057066, 0),
+(15, 'nahuel', '2001-04-25', 'masculino', 43238988, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cronograma`
+--
+
+CREATE TABLE `cronograma` (
+  `curso` int(11) NOT NULL,
+  `fecha_inicio` date NOT NULL,
+  `fecha_fin` date NOT NULL,
+  `dias` varchar(100) NOT NULL,
+  `horario` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cronograma`
+--
+
+INSERT INTO `cronograma` (`curso`, `fecha_inicio`, `fecha_fin`, `dias`, `horario`) VALUES
+(1, '2022-11-01', '2022-12-31', 'Lunes y Jueves', '9:00 a 12:00'),
+(2, '2023-01-01', '2023-02-28', 'Miercoles y Viernes', '12:00 a 15:00'),
+(2, '2022-11-01', '2022-12-31', 'Lunes y Jueves', '9:00 a 12:00'),
+(3, '2023-01-01', '2023-02-28', 'Miercoles y Viernes', '12:00 a 15:00'),
+(4, '2022-11-01', '2022-12-31', 'Lunes y Jueves', '15:00 a 18:00'),
+(5, '2023-01-01', '2023-02-28', 'Miercoles y Viernes', '10:00 a 13:00'),
+(6, '2022-11-01', '2022-12-31', 'Martes y Jueves', '09:00 a 11:00'),
+(7, '2023-01-01', '2023-02-28', 'Martes y Viernes', '14:00 a 17:00');
 
 -- --------------------------------------------------------
 
@@ -64,23 +93,24 @@ INSERT INTO `alumnes` (`id`, `nombre`, `nacimiento`, `genero`, `dni`, `activo`) 
 
 CREATE TABLE `cursos` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL
+  `nombre` varchar(50) NOT NULL,
+  `tipo` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cursos`
 --
 
-INSERT INTO `cursos` (`id`, `nombre`) VALUES
-(1, 'Introducción al backend'),
-(2, 'Taller fotografia'),
-(3, 'Introduccion al frontend'),
-(5, 'UX Writing'),
-(6, 'Taller de Robotica'),
-(7, 'Taller de Cine'),
-(8, 'programacion '),
-(15, 'backend'),
-(16, '');
+INSERT INTO `cursos` (`id`, `nombre`, `tipo`) VALUES
+(1, 'Introducción al backend', 'tecnologia'),
+(2, 'Taller fotografia', 'arte'),
+(3, 'Introduccion al frontend', 'tecnologia'),
+(5, 'UX Writing', 'tecnologia'),
+(6, 'Taller de Robotica', 'tecnologia'),
+(7, 'Taller de Cine', 'arte'),
+(8, 'programacion ', 'tecnologia'),
+(15, 'backend', 'tecnologia'),
+(16, '', '');
 
 -- --------------------------------------------------------
 
@@ -118,7 +148,9 @@ INSERT INTO `inscripciones` (`id`, `alumne`, `curso`) VALUES
 (21, 11, 1),
 (22, 9, 5),
 (23, 9, 7),
-(24, 11, 8);
+(24, 11, 8),
+(27, 15, 1),
+(28, 15, 6);
 
 --
 -- Indexes for dumped tables
@@ -150,7 +182,7 @@ ALTER TABLE `inscripciones`
 -- AUTO_INCREMENT for table `alumnes`
 --
 ALTER TABLE `alumnes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `cursos`
@@ -162,7 +194,7 @@ ALTER TABLE `cursos`
 -- AUTO_INCREMENT for table `inscripciones`
 --
 ALTER TABLE `inscripciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
