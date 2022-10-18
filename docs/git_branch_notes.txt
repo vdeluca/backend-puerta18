@@ -1,0 +1,18 @@
+Push a la rama master
+git push origin master
+
+Crea y cambia de rama
+git checkout -b typeorm
+
+Lista las ramas
+git branch
+
+Push de la nueva rama
+git push origin typeorm
+
+Cambia de rama a master
+git checkout master
+
+Cambia de rama a typeorm
+git checkout typeorm
+
