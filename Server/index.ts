@@ -2,6 +2,7 @@ import {Servidor} from "./classes/server";
 import { router } from "./routes/router";
 import cors from "cors";
 import bodyParser from "body-parser";
+import "reflect-metadata"; 
 
 let server = new Servidor();
 
