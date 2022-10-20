@@ -1,7 +1,9 @@
 export interface Socie{
-    nombre: string,
-    apellido: string,
-    nick: string,
-    nacimiento: number
+    firstName: string;
+    lastName: string;
+    brithday: Date;
+    address: string;
+    dni: string;
+    cellphone: string;
 }
 
