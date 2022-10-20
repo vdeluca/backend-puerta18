@@ -1,0 +1,14 @@
+{
+  "name": "loaddata",
+  "version": "1.0.0",
+  "description": "Soft para cargar datos dentro de la tabla asistencias, basado en los cursos y los cronogramas cargados previamente en la base de datos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.8.4"
+  }
+}
