@@ -12,6 +12,7 @@ import { cursosPorDocente } from "../models/cursosxdocentes.model";
 // ORM Data
 import { AppDataSource } from "../src/data-source";
 import { User } from "../src/entity/User";
+import { Socie } from "../classes/socie";
 
 export const router = Router();
 
@@ -23,7 +24,12 @@ export const router = Router();
  * Devuelve respuesta
  */
 router.get('/new-socie', (req: Request, res:Response) => {
-
+    // Creo la variable vacia
+    let newSocie: Socie = {firstName: "", lastName: "", brithday:new Date(), address: "", dni: "", cellphone: ""};
+    // Valido los datos y los cargo en la variable de arriba
+    if (req.params.firstName && req.params.firstName != ""){
+        newSocie.firstName = req.params.firstName;
+    }
 });
 
 
