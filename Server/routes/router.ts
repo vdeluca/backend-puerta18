@@ -9,22 +9,37 @@ import { cursos } from "../data/cursos.data";
 import { docentes } from "../data/docentes.data";
 import { cursosPorDocente } from "../models/cursosxdocentes.model";
 
-
+// ORM Data
+import { AppDataSource } from "../src/data-source";
+import { User } from "../src/entity/User";
 
 export const router = Router();
 
+/**
+ * API de alta de nuevo socie
+ * Toma los datos de un formulario a través de req
+ * Valida
+ * Crea nuevo socie
+ * Devuelve respuesta
+ */
+router.get('/new-socie', (req: Request, res:Response) => {
+
+});
+
 
 router.get('/socies', (req: Request, res: Response) => {
-    let socie_resp: Array <{nombre: string, apellido: string, nick:string, edad:number}> = [];
+    let socie_resp: Array <Socie> = [];
     let current_year = new Date().getFullYear();
     socies.forEach( socie => {
 
-        let edad = current_year - socie.nacimiento;
+        let edad = current_year - socie.brithday.getFullYear();
         socie_resp.push({
-            nombre: socie.nombre,
-            apellido: socie.apellido,
-            nick: socie.nick,
-            edad: edad
+            firstName: socie.firstName,
+            lastName: socie.lastName,
+            brithday:new Date(), 
+            address: "", 
+            dni: "", 
+            cellphone: ""
         }
         )
     });
@@ -43,11 +58,11 @@ router.get('/cursos', (req: Request, res: Response) => {
 });
 
 router.get('/socie/:nick', (req: Request, res: Response) => {
-    let ficha:Socie= {nombre: "", apellido: "", nick:"", nacimiento:0};
+    let ficha:Socie= {firstName: "", lastName: "", brithday:new Date(), address: "", dni: "", cellphone: ""};
     let flag:boolean=false;
 
     socies.forEach(socie => {
-        if (socie.nick === req.params.nick){
+        if (socie.firstName === req.params.nick){
             ficha = socie;
             flag=true;
         }
