@@ -1,7 +1,7 @@
 export interface Socie{
     firstName: string;
     lastName: string;
-    brithday: Date;
+    birthday: Date;
     address: string;
     dni: string;
     cellphone: string;

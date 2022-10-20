@@ -4,7 +4,7 @@ import { Socie } from "../models/socie.model";
 import { Curso } from "../models/curso.model";
 
 // Data
-import { socies } from "../data/socies.data";
+import { socies, name_socies } from "../data/socies.data";
 import { cursos } from "../data/cursos.data";
 import { docentes } from "../data/docentes.data";
 import { cursosPorDocente } from "../models/cursosxdocentes.model";
@@ -12,7 +12,6 @@ import { cursosPorDocente } from "../models/cursosxdocentes.model";
 // ORM Data
 import { AppDataSource } from "../src/data-source";
 import { User } from "../src/entity/User";
-import { Socie } from "../classes/socie";
 
 export const router = Router();
 
@@ -25,11 +24,22 @@ export const router = Router();
  */
 router.get('/new-socie', (req: Request, res:Response) => {
     // Creo la variable vacia
-    let newSocie: Socie = {firstName: "", lastName: "", brithday:new Date(), address: "", dni: "", cellphone: ""};
+    let newSocie: Socie = {firstName: "", lastName: "", birthday:new Date(), address: "", dni: "", cellphone: ""};
     // Valido los datos y los cargo en la variable de arriba
     if (req.params.firstName && req.params.firstName != ""){
         newSocie.firstName = req.params.firstName;
     }
+});
+
+router.get('/socies-name', (req: Request, res: Response) =>{
+/**
+ * return data
+ */
+    res.json({
+        ok: true,
+        socies: name_socies
+    })
+
 });
 
 
@@ -38,12 +48,12 @@ router.get('/socies', (req: Request, res: Response) => {
     let current_year = new Date().getFullYear();
     socies.forEach( socie => {
 
-        let edad = current_year - socie.brithday.getFullYear();
+        let edad = current_year - 2002;
         socie_resp.push({
             firstName: socie.firstName,
             lastName: socie.lastName,
-            brithday:new Date(), 
-            address: "", 
+            birthday: socie.birthday, 
+            address: "fff", 
             dni: "", 
             cellphone: ""
         }
@@ -64,7 +74,7 @@ router.get('/cursos', (req: Request, res: Response) => {
 });
 
 router.get('/socie/:nick', (req: Request, res: Response) => {
-    let ficha:Socie= {firstName: "", lastName: "", brithday:new Date(), address: "", dni: "", cellphone: ""};
+    let ficha:Socie= {firstName: "", lastName: "", birthday:new Date(), address: "", dni: "", cellphone: ""};
     let flag:boolean=false;
 
     socies.forEach(socie => {
