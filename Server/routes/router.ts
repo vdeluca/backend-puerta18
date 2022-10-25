@@ -13,7 +13,19 @@ import { cursosPorDocente } from "../models/cursosxdocentes.model";
 import { AppDataSource } from "../src/data-source";
 import { User } from "../src/entity/User";
 
+import { socieController } from "../controllers/sociesController"; 
+
 export const router = Router();
+
+
+/**
+ * CRUD Socie
+ */
+router.post('/socie', (req: Request, res: Response) => {
+    let sc = new socieController();
+    sc.addSocie(req, res);
+});
+
 
 /**
  * API de alta de nuevo socie
