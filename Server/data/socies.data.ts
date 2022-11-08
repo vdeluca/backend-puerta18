@@ -2,24 +2,47 @@ import { Socie } from "../models/socie.model";
 
 export const socies: Array<Socie> = [
     {
-        nombre: 'Nahuel',
-        apellido: 'Heredia',
-        nick: "N4hu3l",
-        nacimiento: 1990
+        firstName: 'Nahuel',
+        lastName: 'Heredia',
+        birthday: new Date("2002-01-01"),
+        address: "Necochea 777",
+        dni: "2222222",
+        cellphone: "15-3454-64444"
     },
 
     {
-        nombre: 'Irina',
-        apellido: 'Davico',
-        nick: 'Ir1n4',
-        nacimiento: 2000,
+        firstName: 'Irina',
+        lastName: 'Heredia',
+        birthday: new Date("2002-01-01"),
+        address: "Necochea 777",
+        dni: "2222222",
+        cellphone: "15-3454-64444"
     },
 
     {
-        nombre: 'John',
-        apellido: 'Maza',
-        nick: 'J0hny',
-        nacimiento: 2001,
+        firstName: 'Mar',
+        lastName: 'Heredia',
+        birthday: new Date("2002-01-01"),
+        address: "Necochea 777",
+        dni: "2222222",
+        cellphone: "15-3454-64444"
     }
 
 ];
+
+export const name_socies = [
+    {name:"Vicente Deluca"},
+    {name:"Ludmila Saba"},
+    {name:"Angel Caldas"},
+    {name:"Johnny Arvelo"},
+    {name:"Franco Nicoletti"},
+    {name:"Franco Pelaez"},
+    {name:"Leonel Mercau"},
+    {name:"Maryori Brighit Carrillo Elias"},
+    {name:"German"},
+    {name:"Alejandro Aracri"},
+    {name:"Irina"},
+    {name:"Maria"},
+    {name:"Franco Galian"},
+    {name:"Juan"}        
+]
