@@ -19,11 +19,6 @@ server.app.use('/', router);
 
 AppDataSource.initialize()
     .then(async ()=>{
-        let usuario = new User();
-        usuario.firstName = "Vicente";
-        usuario.lastName = "Deulca";
-        
-        await AppDataSource.manager.save(usuario)
     })
     .catch((error)=>{
         console.log(error);

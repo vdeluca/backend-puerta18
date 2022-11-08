@@ -1,4 +1,4 @@
-import { Router, Request, Response, request, response } from "express";
+import { Router, Request, Response } from "express";
 // Models
 import { Socie } from "../models/socie.model";
 
@@ -9,6 +9,7 @@ import { socies, name_socies } from "../data/socies.data";
 import { AppDataSource } from "../global/environment";
 
 import { socieController } from "../controllers/sociesController"; 
+import { User } from "../models/dbmodels";
 
 export const router = Router();
 
@@ -49,6 +50,19 @@ router.get('/socies-name', (req: Request, res: Response) =>{
 
 });
 
+router.get('/users', 
+    async (req: Request, res: Response) => {
+        const users = await AppDataSource
+            .getRepository(User)
+            .createQueryBuilder("user")
+            .getMany();
+
+        res.json({
+            ok:true,
+            usuarios: users
+        });
+    }
+);
 
 router.get('/socies', (req: Request, res: Response) => {
     let socie_resp: Array <Socie> = [];
