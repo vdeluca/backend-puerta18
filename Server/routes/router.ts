@@ -32,15 +32,22 @@ router.post('/socie', (req: Request, res: Response) => {
  */
 router.post('/new-socie', async (req: Request, res:Response) => {
     // Valido los datos y los cargo en la variable de arriba
-    if (req.params.firstName && req.params.firstName != ""){
-        await AppDataSource
+    //console.log(req.body);
+    if (req.body.fullName != ""){
+        const user = await AppDataSource
                 .createQueryBuilder()
                 .insert()
                 .into(User)
                 .values([
-                    { fullName: req.params.fullName }
+                    { fullName: req.body.fullName }
                 ])
                 .execute();
+        
+        
+        res.json({
+            ok:true,
+            user:user
+        })
     }
 });
 
