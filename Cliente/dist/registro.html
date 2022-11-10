@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puerta 18</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/fontello.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body class="registro">
+  <header>
+    <div class="portada">
+      <h1> Puerta 18</h1>
+      <input type="checkbox" id="menu-bar">
+      <label class="icon-menu" for="menu-bar"></label>
+      <nav class="menu">
+        <a class="" href="index.html">Home</a>
+        <a class="" href="#">Cursos</a>
+        <a class="" href="#">Socies</a>
+        <a class="" href="registro.html">Inscribite</a>
+      </nav>
+    </div>
+    </div>
+</header>
+    <div class="container">
+      <form action="home.html">
+      <div class="title">Datos Basicos</div>
+      <div class="content">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details required-field">Nombre y Apellido</span>
+              <input type="text" placeholder="Ingresa tu nombre y apellido" name="nombreyapellido" id="nombreyapellido" required>
+            </div>
+            <div class="input-box">
+                <span class="details required-field">NickName</span>
+                <input type="text" placeholder="Ingresa tu nickname" name="nick" id="nick" required>
+              </div>
+            <div class="input-box">
+              <span class="details required-field">Fecha de Nacimiento</span>
+              <input type="date" placeholder="Ingresa la fecha" name="fechaDeNacimiento" id="fechaDeNacimiento" required>
+            </div>
+            <div class="input-box">
+              <span class="details required-field">Documento</span>
+              <input type="number" placeholder="Ingresa tu DNI" name="documento" id="documento" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Escuela</span>
+              <input type="text" placeholder="Ingresa tu escuela" name="escuela" id="escuela">
+            </div>
+            <div class="input-box">
+                <span class="details">Carrera</span>
+                <input type="text" placeholder="Ingresa tu carrera" name="carrera" id="carrera">
+            </div>
+          </div>
+          <div class="genero-details">
+            <input type="radio" name="genero" id="dot-1">
+            <input type="radio" name="genero" id="dot-2">
+            <input type="radio" name="genero" id="dot-3">
+            <input type="radio" name="genero" id="dot-4">
+            <span class="genero-title required-field">Pronombres</span>
+            <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Masculinos (Él)</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Femeninos (Ella)</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Neutros (Elle)</span>
+            </label>
+            <label for="dot-4">
+              <span class="dot four"></span>
+              <span class="gender">Cualquier pronombre</span>
+            </label>
+            </div>
+          </div>
+      </div>
+      <div class="title">Información de padre, madre o tutor</div>
+      <div class="content">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Nombre Completo</span>
+              <input type="text" placeholder="Ingresa su nombre" name="nombreTutor" id="nombreTutor">
+            </div>
+            <div class="input-box">
+              <span class="details">Teléfono del adulto</span>
+              <input type="tel" placeholder="Ingrese su número" name="telefonoTutor">
+            </div>
+      </div>
+      <div class="title">Contacto</div>
+      <div class="content">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details required-field">Teléfono</span>
+              <input type="tel" placeholder="Ingresa tu número" name="telefono" required>
+            </div>
+            <div class="input-box">
+              <span class="details required-field">Email</span>
+              <input type="email" placeholder="Ingresa tu em@il" name="correo" id="correo" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Compañia de celular</span>
+              <input type="text" placeholder="Ingresa tu compañia de celular" name="empresaTelefono" id="empresaTelefono">
+            </div>
+      </div>
+      <div class="title">Domicilio</div>
+      <div class="content">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details required-field">Direccion</span>
+              <input type="text" placeholder="Ingresa tu Direccion" name="direccion" id="direccion" required>
+            </div>
+            <div class="input-box">
+              <span class="details required-field">Barrio</span>
+              <input type="text" placeholder="Ingresa tu barrio" name="barrio" id="barrio" required>
+            </div>
+            <div class="input-box">
+              <span class="details required-field">Localidad</span>
+              <input type="text" placeholder="Ingresa tu localidad" name="localidad" id="localidad" required>
+            </div>
+          </div>
+      </div>
+      <div class="title">Datos de ingreso</div>
+      <div class="content">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details required-field">Contraseña</span>
+            <input type="password" placeholder="Ingresa tu contraseña" name="contraseña" id="contraseña" required>
+          </div>
+        </div>
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details required-field">Confirmar contraseña</span>
+            <input type="password" placeholder="Confirma tu contraseña" name="contraseñaComparar" id="contraseñaComparar" required>
+          </div>
+        </div> <div class="button">
+          <div class="toast">
+              <div class="toast-content">
+                  <i class="fas fa-solid fa-check check"></i>
+      
+                  <div class="message">
+                      <span class="text text-1">Felicitaciones</span>
+                      <span class="text text-2">Te has registrado correctamente</span>
+                  </div>
+              </div>
+              <i class="fa-solid fa-xmark close"></i>
+      
+              <div class="progress"></div>
+          </div>
+      
+          <button>Registrarse</button>
+      </body>
+      
+      
+      
+      <script>
+          const button = document.querySelector("button"),
+            toast = document.querySelector(".toast")
+            closeIcon = document.querySelector(".close"),
+            progress = document.querySelector(".progress");
+      
+            let timer1, timer2;
+      
+            button.addEventListener("click", () => {
+              toast.classList.add("active");
+              progress.classList.add("active");
+      
+              timer1 = setTimeout(() => {
+                  toast.classList.remove("active");
+              }, 5000); //1s = 1000 milliseconds
+      
+              timer2 = setTimeout(() => {
+                progress.classList.remove("active");
+              }, 5300);
+            });
+            
+            closeIcon.addEventListener("click", () => {
+              toast.classList.remove("active");
+              
+              setTimeout(() => {
+                progress.classList.remove("active");
+              }, 300);
+      
+              clearTimeout(timer1);
+              clearTimeout(timer2);
+            });
+      
+      </script>
+      
+      </html>
+      
