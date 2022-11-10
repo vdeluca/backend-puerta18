@@ -59,3 +59,8 @@
 .icon-website:before { content: '\e802'; } /* '' */
 .icon-instagram:before { content: '\f16d'; } /* '' */
 .icon-facebook-squared:before { content: '\f308'; } /* '' */
+.icon-users:before { content: '\e803'; } /* '' */
+.icon-user:before { content: '\e804'; } /* '' */
+.icon-menu:before { content: '\f0c9'; } /* '' */
+.icon-user-secret:before { content: '\f21b'; } /* '' */
+.icon-user-plus:before { content: '\f234'; } /* '' */
