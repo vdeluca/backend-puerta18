@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url(fontello.css);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+  transition: all 0.3s ease;
+}
+
+
+header{
+    background: #753c9d;
+}
+
+footer{
+  background: #753c9d;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  padding: 15px;
+}
+
+.portada img{
+    height: min(100%, 12em);
+    width: min(100%, 12em);
+}
+
+.menu {
+    float: right;
+    margin: 21px 0;
+    cursor: pointer;
+} 
+
+.menu a{
+    font-size: 1.5em;
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+}
+
+/*.contenido{
+    background-image: url(https://www.helpargentina.org/images/default/ong/portada35.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}*/
+
+.contenido_full {
+  background: #ededed;
+}
+
+.Letras{
+    color: rgb(199, 199, 199);
+    padding: 2em;
+    height: 100%;
+    width: 100%;
+    background: url("/Img/fondo.jpg") no-repeat center center;
+    background-size: cover;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.Letras h1{
+    text-align: center;
+    font-size: 3.5em;
+}
+
+.Letras h2{
+    text-align: center;
+    font-size: 2em;
+}
+
+.centro{
+  display: flex;
+  flex-wrap: wrap;
+}
+.texto_1 {
+  margin-top: 20px;
+  text-align: center;
+    padding: 2em;
+    height: 20vh;
+    width: 75vw;
+    font-size: 1.5em;
+   color: rgb(8, 8, 8);
+   background: #d6b707;
+   border-radius: 0 20px 20px 0;
+   -webkit-border-radius: 0 20px 20px 0;
+   -moz-border-radius: 0 20px 20px 0;
+   max-width: 650px ;
+}
+
+.texto_2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+    padding: 2em;
+    height: 32vh;
+    width: 75vw;
+    font-size: 1.5em;
+   color: rgb(8, 8, 8);
+   background: #d6b707;
+   border-radius: 0 20px 20px 0;;
+   -webkit-border-radius: 0 20px 20px 0;
+   -moz-border-radius: 0 20px 20px 0;
+   max-width: 700px ;
+}
+
+.Parte_Registro{
+  margin: auto;
+}
+
+.Boton_registro a{
+    margin: 2em;
+    font-size: 3em;
+    Color:white;
+    padding: 7px 21px;
+    border: inset 5px #a101c965;
+    border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    text-decoration: none;
+    background: #764d9f;
+    width: min(100%, 300px);
+}
+
+.personas_registro{
+  width: 400px;
+  height: 200px;
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+
+.persona_check{
+  width: 400px;
+  height: 200px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+.letras_registro{
+  text-align: center;
+  font-size: 2em;
+  color: white;
+  text-shadow: 0 0 0.2em #310419, 0 0 0.2em #310419 ;
+}
+
+/* Para formulario */
+
+.registro{
+  background: #ededed;
+}
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  max-width: 1000px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: -1px -1px 6px 0 rgb(165, 43, 159), 4px 4px 16px 2px rgb(68, 17, 60);
+}
+.container .title{
+  font-size: 30px;
+  font-weight: 500;
+  position: relative;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 6px;
+  width: 70px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #310419, #9b59b6);
+}
+.content .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+.user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+.input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+/*.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #310419;
+}*/
+
+.genero-details .genero-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+.category{
+   display: flex;
+   width: 100%;
+   margin: 14px 0;
+   justify-content: space-between;
+}
+.category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   margin-right: 1em;
+}
+.category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 90%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three,
+ #dot-4:checked ~ .category label .four {
+   background: #9b59b6;
+   border-color: #d9d9d9;
+}
+input[type="radio"]{
+   display: none;
+}
+.button{
+   height: 45px;
+   margin: 35px 0
+}
+.button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #310419, #9b59b6);
+}
+
+.required-field::after {
+  content: "*";
+  color: red;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #310419, #9b59b6);
+ }
+
+ /* Notificacion registro */
+.button input{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #310419, #9b59b6);
+}
+.button input:hover{
+ /* transform: scale(0.99); */
+ background: linear-gradient(-135deg, #310419, #9b59b6);
+}
+button{
+ padding: 12px 20px;
+ height: 3em;
+ width: 100%;
+ border-radius: 5px;
+ outline: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background:  #830ef1;
+}
+.toast{
+ position: absolute;
+ bottom: 0px;
+ right: 30px;
+ border-radius: 12px;
+ background: #fff;
+ padding: 20px 35px 20px 25px;
+ box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+ border-left: 6px solid #830ef1;
+ overflow: hidden;
+ transform: translateX(calc(100% + 30px));
+ transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+
+}
+
+.toast.active{
+ transform: translateX(0%);
+}
+
+.toast .toast-content{
+ display: flex;
+ align-items: center;
+}
+
+.toast-content .check{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 35px;
+ width: 35px;
+ background-color: #830ef1;
+ color: #fff;
+ font-size: 20px;
+ border-radius: 50%;
+}
+
+.toast-content .message{
+ display: flex;
+ flex-direction: column;
+ margin: 0 20px;
+}
+
+.message .text{
+ font-size: 20px;
+ font-weight: 400;;
+ color: #666666;
+}
+
+.message .text.text-1{
+ font-weight: 600;
+ color: #333;
+}
+
+.toast .close{
+ position: absolute;
+ top: 10px;
+ right: 15px;
+ padding: 5px;
+ cursor: pointer;
+ opacity: 0.7;
+}
+
+.toast .close:hover{
+ opacity: 1;
+}
+
+.toast .progress{
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ height: 3px;
+ width: 100%;
+ background: #ddd;
+}
+
+.toast .progress:before{
+ content: '';
+ position: absolute;
+ bottom: 0;
+ right: 0;
+ height: 100%;
+ width: 100%;
+ background-color: #830ef1;
+}
+
+.progress.active:before{
+ animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+ 100%{
+     right: 100%;
+ }
+}
+
+button:hover{
+ background-color: #830ef1;
+}
+
+.toast.active ~ button{
+ pointer-events: none;
+}
+
+/* Notificacion registro FIN */
+
+
+ /* Para Buscar */
+
+ .violeta{
+  background: #753c9d;
+}
+.busqueda{
+  background: #ededed;
+}
+.portada img{
+  height: min(100%, 12em);
+  width: min(100%, 12em);
+}
+
+table, th, td{
+  border: 1px slateblue solid;
+  border-collapse: collapse;   
+
+}
+.crow{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-size: 0.5px;
+
+}
+table, .resultado_lista, .resultado_busqueda {
+  width: 70%;
+  margin: 0 auto;
+}
+th, tr ,td{
+  padding: 10px;
+}
+th{
+  text-align: left;
+  color: white;
+}
+
+a{
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.firma {
+  color: rgb(199, 199, 199);
+}
+
+.flexsearch--wrapper {
+	height: auto;
+	width: auto;
+	max-width: 100%;
+	overflow: hidden;
+	background: transparent;
+	margin: 0;
+	position: static;
+}
+	
+.flexsearch--form {
+	overflow: hidden;
+	position: relative;
+}
+	
+.flexsearch--input-wrapper {
+	padding: 0 66px 0 0; 
+	overflow: hidden;
+}
+
+.flexsearch--input {
+  width: 100%;
+}
+
+.flexsearch {
+  position: absolute;
+  padding: 0 400px 0 250px; 
+  top: -8px;
+}
+
+.flexsearch_2{
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flexsearch--input {
+  -webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+ 	height: 60px;
+  padding: 0 46px 0 10px;
+	border-color: rgb(88, 7, 109);
+  border-radius: 35px; 
+  border-style: solid;
+	border-width: 5px;
+  margin-top: 15px;
+  color: rgb(64, 6, 82);
+  font-family: 'Helvetica', sans-serif;
+	font-size: 26px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+	
+.flexsearch--submit {
+  position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	width: 60px;
+	height: 60px;
+  padding: 0;
+  border: none;
+	margin-top: 20px; 
+  margin-right: 5px; 
+	background: transparent;
+  color: rgb(64, 6, 82);
+  font-family: 'Helvetica', sans-serif;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.flexsearch--input:focus {
+  outline: none;
+  border-color: rgb(64, 6, 82);
+}
+
+.flexsearch--input:focus.flexsearch--submit {
+ 	color: rgb(64, 6, 82); 
+}
+
+.flexsearch--submit:hover {
+  color: rgb(64, 6, 82);
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+	color: rgb(64, 6, 82);  
+}
+
+input:-moz-placeholder {
+  color: rgb(64, 6, 82);
+}
