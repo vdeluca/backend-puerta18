@@ -3,7 +3,6 @@ import { router } from "./routes/router";
 import cors from "cors";
 import bodyParser from "body-parser";
 import {AppDataSource} from './global/environment'
-import { User } from "./models/dbmodels";
 
 let server = new Servidor();
 

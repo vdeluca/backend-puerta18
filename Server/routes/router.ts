@@ -1,6 +1,4 @@
 import { Router, Request, Response } from "express";
-// Models
-import { Socie } from "../models/socie.model";
 
 // Data
 import { socies, name_socies } from "../data/socies.data";
