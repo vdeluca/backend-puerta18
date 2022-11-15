@@ -1,8 +1,5 @@
 import { Router, Request, Response } from "express";
 
-// Data
-import { socies, name_socies } from "../data/socies.data";
-
 // ORM Data
 import { AppDataSource } from "../global/environment";
 
@@ -10,7 +7,6 @@ import { socieController } from "../controllers/sociesController";
 import { User } from "../models/dbmodels";
 
 export const router = Router();
-
 
 /**
  * CRUD Socie
@@ -47,17 +43,6 @@ router.post('/new-socie', async (req: Request, res:Response) => {
             user:user
         })
     }
-});
-
-router.get('/socies-name', (req: Request, res: Response) =>{
-/**
- * return data
- */
-    res.json({
-        ok: true,
-        socies: name_socies
-    })
-
 });
 
 router.get('/users', 

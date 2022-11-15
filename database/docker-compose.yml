@@ -18,3 +18,13 @@ services:
       PMA_HOST: 'db'
       PMA_USER: 'root'
       PMA_PASSWORD: 'notSecureChangeMe'
+
+  web:
+    image: nginx
+    volumes:
+      - /home/vicente/containers/backend/Cliente/dist:/usr/share/nginx/html:ro
+    ports:
+      - 80:80
+    environment:
+      - NGINX_HOST=puerta.net
+      - NGINX_PORT=80
